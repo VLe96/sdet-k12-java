@@ -1,4 +1,4 @@
-package homeWork.Lab_03;
+package homeWork.lab_03;
 
 import java.util.Scanner;
 
@@ -10,3 +10,4 @@ public class Lab3_3 {
         int[] list = new int[soLuongPhanTu];
     }
 }
+

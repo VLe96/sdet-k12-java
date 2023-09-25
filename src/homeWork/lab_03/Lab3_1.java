@@ -1,9 +1,5 @@
-package homeWork.Lab_03;
+package homeWork.lab_03;
 
-import java.awt.*;
-import java.sql.Array;
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class Lab3_1 {

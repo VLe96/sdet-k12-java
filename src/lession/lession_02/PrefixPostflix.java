@@ -1,4 +1,4 @@
-package lession_02;
+package lession.lession_02;
 
 public class PrefixPostflix {
     public static void main(String[] args) {
