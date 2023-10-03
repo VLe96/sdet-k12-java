@@ -1,5 +1,6 @@
 package lession.lession_01;
 
+import java.security.SecureRandom;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -15,16 +16,100 @@ public class Hello {
 //        int min =vi.get(1);
 //        System.out.println(min);
 
-        int [] myArray = {2,1,2,3,5};
-        boolean isNoEvenNumber = true;
-        for (int i : myArray) {
-            if(i % 2 ==0){
-                isNoEvenNumber = false;
-                System.out.println(i);
-                break;
+        int arrayLength = new SecureRandom().nextInt(10) + 1;
+        int upperBound = 1000;
+        System.out.println("Array Length is: " + arrayLength);
+        List<Integer> randomArrayList = randomArrayListLessThanUpperBound(arrayLength, upperBound);
+        System.out.println("The array list is: " + randomArrayList.toString());
+        boolean isContinuing = true;
+        int userOption;
+        do {
+            printGameMenu();
+            System.out.println("Please input your option!");
+            userOption = inputANumber();
+            switch (userOption) {
+                case 1:
+                    System.out.println("All numbers in the array: ");
+                    printAllNumbers(randomArrayList);
+                    break;
+                case 2:
+                    System.out.println("The maximum value in the array is " + printMaximumValue(randomArrayList));
+                    break;
+                case 3:
+                    System.out.println("The minimum value in the array is " + printMinimumValue(randomArrayList));
+                    break;
+                case 4:
+                    System.out.println("Please input one number to search: ");
+                    int searchNumber = inputANumber();
+                    List<Integer> indexList = searchNumber(searchNumber, randomArrayList);
+                    if (indexList.size() > 0){
+                        System.out.println("The indexes of " + searchNumber + " in the list: ");
+                        System.out.println(indexList.toString());
+                    }
+                    else {
+                        System.out.println(searchNumber + " is not in the list");
+                    }
+                    break;
+                default:
+                    isContinuing = false;
+            }
+        } while (isContinuing);
+
+    }
+
+    private static int printMinimumValue(List<Integer> arrayList) {
+        int min = arrayList.get(0);
+        for (Integer number : arrayList) {
+            if (number < min) {
+                min = number;
             }
         }
-        if (isNoEvenNumber)
-            System.out.println("nope");
+        return min;
+    }
+
+    private static int printMaximumValue(List<Integer> arrayList) {
+        int max = arrayList.get(0);
+        for (Integer number : arrayList) {
+            if (number > max) {
+                max = number;
+            }
+        }
+        return max;
+    }
+
+    private static void printAllNumbers(List<Integer> arrayList) {
+        System.out.println(arrayList);
+    }
+
+    private static List<Integer> searchNumber(int searchNumber, List<Integer> arrayList) {
+        List<Integer> indexList = new ArrayList<>();
+        for (int index = 0; index < arrayList.size(); index++) {
+            if (arrayList.get(index) == searchNumber)
+            {
+                indexList.add(index);
+            }
+        }
+        return indexList;
+    }
+
+    private static void printGameMenu() {
+        System.out.println("=====MENU=====\n" +
+            "1. Print all numbers\n" +
+            "2. Print maximum value\n" +
+            "3. Print minimum value\n" +
+            "4. Search number");
+    }
+
+    public static List<Integer> randomArrayListLessThanUpperBound(int arrayLength, int upperBound){
+        List<Integer> resultList = new ArrayList<>(arrayLength);
+        int number=0;
+        for (int index = 0; index < arrayLength; index++) {
+            resultList.add(index, new SecureRandom().nextInt(upperBound));
+        }
+        return resultList;
+    }
+
+    public static int inputANumber() {
+        return (new Scanner(System.in).nextInt());
     }
 }

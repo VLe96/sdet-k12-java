@@ -18,31 +18,36 @@ public class Lab_04 {
     Integer[] list = new Integer[soLuongPhanTu];
     nhapPhantu(list);
     printMenu();
-    int numberChoose = scanner.nextInt();
-    chooseOption(numberChoose, list);
+    chooseOption(list);
   }
+
   public static void nhapPhantu(Integer[] list) {
     Scanner scanner = new Scanner(System.in);
     for (int phanTu = 0; phanTu < list.length; phanTu++) {
       list[phanTu] = randomNumber();
     }
   }
+
   public static void printMenu() {
     System.out.println("=====MENU======\n"
         + "1. Print all numbers\n"
-        +"2. Print maximum value\n"
+        + "2. Print maximum value\n"
         + "3. Print minimum value\n"
-        + "4. Search number");
+        + "4. Search number\n"
+        + "To close the application, select any number other than 1 through 4!\n\n");
     System.out.println("The option which you want to choose: ");
   }
+
   public static int randomNumber() {
     return new SecureRandom().nextInt(Integer.max(0, 1000));
   }
+
   //1. Print all numbersl
   public static void printAllNumber(Integer[] list) {
     List<Integer> listArray = Arrays.asList(list);
     System.out.println(listArray);
   }
+
   // 2. Print maximum value
   public static void printMaximumValue(Integer[] list) {
     int max = list[0];
@@ -53,6 +58,7 @@ public class Lab_04 {
     }
     System.out.println("The maximum number is: " + max);
   }
+
   // 3. Print minimum value
   public static void printMinimum(Integer[] list) {
     int min = list[0];
@@ -63,6 +69,7 @@ public class Lab_04 {
     }
     System.out.println("The minimum number is: " + min);
   }
+
   // 4. Search numbe
   public static void searchNumber(Integer[] list) {
     Scanner scanner = new Scanner(System.in);
@@ -80,9 +87,13 @@ public class Lab_04 {
       System.out.println("The number is not in array!!!");
     }
   }
+
   //Choose option
-  public static void chooseOption(int numberChoose, Integer[] list) {
+  public static void chooseOption(Integer[] list) {
+    boolean run = true;
     do {
+      printMenu();
+      int numberChoose = getUserOption();
       switch (numberChoose) {
         case 1:
           printAllNumber(list);
@@ -96,9 +107,17 @@ public class Lab_04 {
         case 4:
           searchNumber(list);
           break;
+        default:
+          run = false;
+          System.out.println("Exit!!!");
       }
-    } while (1 < numberChoose && numberChoose > 5);
+    } while (run);
     System.out.println("End Program!!!");
   }
 
+  public static int getUserOption() {
+    int numberchoose;
+    Scanner scanner = new Scanner(System.in);
+    return numberchoose = scanner.nextInt();
+  }
 }
