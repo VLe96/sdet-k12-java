@@ -31,7 +31,7 @@ public class Lab_04 {
         + "2. Print maximum value\n"
         + "3. Print minimum value\n"
         + "4. Search number\n"
-        + "To close the application, select any number other than 1 through 4!\n\n");
+        + "To close the application, select any number but 1 to 4!\n\n");
     System.out.println("The option which you want to choose: ");
   }
   public static int randomNumber() {
