@@ -7,7 +7,6 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Lab_04 {
-
   public static void main(String[] args) {
     Scanner scanner = new Scanner(System.in);
     int soLuongPhanTu;
@@ -20,14 +19,12 @@ public class Lab_04 {
     printMenu();
     chooseOption(list);
   }
-
   public static void nhapPhantu(Integer[] list) {
     Scanner scanner = new Scanner(System.in);
     for (int phanTu = 0; phanTu < list.length; phanTu++) {
       list[phanTu] = randomNumber();
     }
   }
-
   public static void printMenu() {
     System.out.println("=====MENU======\n"
         + "1. Print all numbers\n"
@@ -37,18 +34,15 @@ public class Lab_04 {
         + "To close the application, select any number other than 1 through 4!\n\n");
     System.out.println("The option which you want to choose: ");
   }
-
   public static int randomNumber() {
     return new SecureRandom().nextInt(Integer.max(0, 1000));
   }
-
   //1. Print all numbersl
   public static void printAllNumber(Integer[] list) {
     List<Integer> listArray = Arrays.asList(list);
     System.out.println(listArray);
   }
-
-  // 2. Print maximum value
+ Print maximum value
   public static void printMaximumValue(Integer[] list) {
     int max = list[0];
     for (int number : list) {
@@ -58,7 +52,6 @@ public class Lab_04 {
     }
     System.out.println("The maximum number is: " + max);
   }
-
   // 3. Print minimum value
   public static void printMinimum(Integer[] list) {
     int min = list[0];
@@ -69,7 +62,6 @@ public class Lab_04 {
     }
     System.out.println("The minimum number is: " + min);
   }
-
   // 4. Search numbe
   public static void searchNumber(Integer[] list) {
     Scanner scanner = new Scanner(System.in);
@@ -87,7 +79,6 @@ public class Lab_04 {
       System.out.println("The number is not in array!!!");
     }
   }
-
   //Choose option
   public static void chooseOption(Integer[] list) {
     boolean run = true;
@@ -114,7 +105,6 @@ public class Lab_04 {
     } while (run);
     System.out.println("End Program!!!");
   }
-
   public static int getUserOption() {
     int numberchoose;
     Scanner scanner = new Scanner(System.in);
