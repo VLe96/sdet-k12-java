@@ -23,6 +23,8 @@ public class Lab3_4 {
             System.out.printf("Enter the number at %d: ", index);
             list2[index] = scanner.nextInt();
         }
+        //Gom 2 mảng lại
+
 
 
     }

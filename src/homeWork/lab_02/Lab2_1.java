@@ -19,9 +19,9 @@ public class Lab2_1 {
 
         if(BMI <= 18.5){
             System.out.println("Under weight");
-        } else if (18.5 < BMI & BMI <= 24.9) {
+        } else if (BMI <= 24.9) {
             System.out.println("Normal weight");
-        } else if (25 < BMI & BMI <= 29.9) {
+        } else if (BMI <= 29.9) {
             System.out.println("Over weight");
         } else{
             System.out.println("Obesity");

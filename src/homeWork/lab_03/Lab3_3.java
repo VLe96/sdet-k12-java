@@ -29,7 +29,7 @@ public class Lab3_3 {
         }
 
         for (int index = 0; index < list.length; index++) {
-            System.out.printf("the number after min to max at %d: %d\n",index, list[index]);
+            System.out.printf("the number after sorting at %d: %d\n",index, list[index]);
         }
 
     }
