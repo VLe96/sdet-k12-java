@@ -42,7 +42,7 @@ public class Lab_04 {
     List<Integer> listArray = Arrays.asList(list);
     System.out.println(listArray);
   }
- Print maximum value
+  //Print maximum value
   public static void printMaximumValue(Integer[] list) {
     int max = list[0];
     for (int number : list) {
