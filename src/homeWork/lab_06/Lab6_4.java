@@ -25,10 +25,9 @@ public class Lab6_4 {
   }
   public static void getDomain(String url) {
     if (url.startsWith("https://"))
-    url = url.replaceAll("https://", "");
-    else if (url.startsWith("http://")) {
+      url = url.replaceAll("https://", "");
+    else if (url.startsWith("http://"))
       url = url.replaceAll("http://", "");
-    }
     System.out.println("Domain name of URL is " + url);
   }
 
