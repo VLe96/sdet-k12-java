@@ -1,4 +1,4 @@
-package homeWork.Lab_10;
+package homeWork.lab_10;
 
 public abstract class Animal {
   protected String name;

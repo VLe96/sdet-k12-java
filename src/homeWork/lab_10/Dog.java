@@ -1,17 +1,22 @@
-package homeWork.Lab_10;
+package homeWork.lab_10;
 
 import java.security.SecureRandom;
 
-public class Tiger extends Animal{
-  final static int MAX_VALUE = 120;
+public class Dog extends Animal{
+
+  final static int MAX_VALUE = 60;
   final static int random = new SecureRandom().nextInt(MAX_VALUE);
-  public Tiger() {
-    super("Tiger", random);
+  public Dog() {
+    super("Dog", random);
   }
+
   @Override
   public void setName() {
+
   }
+
   @Override
   public void setSpeed() {
+
   }
 }
