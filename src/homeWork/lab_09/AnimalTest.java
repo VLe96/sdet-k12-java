@@ -1,22 +1,46 @@
 package homeWork.lab_09;
 
+import homeWork.lab_09.AnimalBuilder.Builder;
 import java.security.SecureRandom;
-import java.sql.Array;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 public class AnimalTest {
 
   public static void main(String[] args) {
-    Animal horse = new Animal("horse", new SecureRandom().nextInt(75), false);
-    Animal tiger = new Animal("Tiger", new SecureRandom().nextInt(120), false);
-    Animal dog = new Animal("Tiger", new SecureRandom().nextInt(60), false);
-    Animal bird = new Animal("Bird", new SecureRandom().nextInt(10), true);
-    Animal dfc = new Animal();
-
-    List<Animal> animals = Arrays.asList(horse, tiger, bird);
-    Animal getWinner = AnimalController.getWinner(animals);
+    Builder builder = new Builder();
+    AnimalBuilder horse = builder
+        .setName("Horse")
+        .setSpeed(new SecureRandom().nextInt(75))
+        .setHasWing(false)
+        .builder();
+    AnimalBuilder tiger = builder
+        .setName("Tiger")
+        .setSpeed(new SecureRandom().nextInt(120))
+        .setHasWing(false)
+        .builder();
+    AnimalBuilder dog = builder
+        .setName("Tiger")
+        .setSpeed(new SecureRandom().nextInt(60))
+        .setHasWing(false)
+        .builder();
+    AnimalBuilder bird = builder
+        .setName("Tiger")
+        .setSpeed(new SecureRandom().nextInt(30))
+        .setHasWing(true)
+        .builder();
+    AnimalBuilder eagle = builder
+        .setName("Eagle")
+        .setSpeed(new SecureRandom().nextInt(120))
+        .setHasWing(true)
+        .builder();
+    AnimalBuilder snake = builder
+        .setName("Snake")
+        .setSpeed(new SecureRandom().nextInt(40))
+        .setHasWing(false)
+        .builder();
+    List<AnimalBuilder> animalBuilders = Arrays.asList(horse,tiger,dog,eagle,snake);
+    AnimalBuilder getWinner = AnimalController.getWinner(animalBuilders);
     System.out.println(getWinner.getName());
     System.out.println(getWinner.getSpeed());
   }
