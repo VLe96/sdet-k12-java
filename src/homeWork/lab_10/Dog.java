@@ -12,11 +12,8 @@ public class Dog extends Animal{
 
   @Override
   public void setName() {
-
   }
-
   @Override
   public void setSpeed() {
-
   }
 }

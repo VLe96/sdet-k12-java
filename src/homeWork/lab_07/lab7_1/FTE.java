@@ -5,4 +5,8 @@ public class FTE extends Employee {
   public int getSalary() {
     return 50000;
   }
+  @Override
+  public int getBonus(){
+    return 10000;
+  }
 }
